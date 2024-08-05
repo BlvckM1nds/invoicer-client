@@ -36,6 +36,10 @@
     ]
   },
   "devDependencies": {
-    "tailwindcss": "^3.4.7"
+    "ajv": "^8.17.1",
+    "ajv-keywords": "^5.1.0",
+    "schema-utils": "^4.2.0",
+    "tailwindcss": "^3.4.7",
+    "webpack": "^5.93.0"
   }
 }
