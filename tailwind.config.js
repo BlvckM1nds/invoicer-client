@@ -4,7 +4,23 @@ module.exports = {
     "./src/**/*.{js,jsx,ts,tsx}",
   ],
   theme: {
-    extend: {},
+    screens: {
+      sm: "640px",
+      md: "768px",
+      lg: "960px",
+      xl: "1200px"
+    },
+    extend: {
+      colors: {
+        dark: "#535b61",
+        blue: "#0c2f54",
+        'black-2-opacity': "rgba(0, 0, 0, 0.02)",
+        'black-1-opacity': "rgba(0, 0, 0, 0.1)"
+      },
+      gridTemplateColumns: {
+        'custom-80-20': '80% 20%',
+      },
+    },
   },
   plugins: [],
 }
