@@ -19,7 +19,7 @@ module.exports = {
         'black-1-opacity': "rgba(0, 0, 0, 0.1)"
       },
       gridTemplateColumns: {
-        'custom': '75% 25%',
+        'custom': '72% 28%',
       },
     },
   },
