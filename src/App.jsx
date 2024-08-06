@@ -1,10 +1,11 @@
 import { Fragment } from 'react';
+
 import logo from './astra-logo.png';
 import './index.css';
 
 import { BsFillPrinterFill, BsDownload } from 'react-icons/bs';
 
-function App() {
+export default function App() {
   const handlePrint = () => {
     window.print();
   };
@@ -12,29 +13,29 @@ function App() {
   return (
     <Fragment>
       <main className='min-h-screen bg-black-1-opacity' id='print-area'>
-        <div className='max-w-[850px] mx-auto bg-white p-10  min-h-screen'>
+        <div className='max-w-[850px] mx-auto bg-white p-5 sm:p-10  min-h-screen'>
           <div className='invoice-container'>
             <div className='invoice-head'>
-              <div className='py-4 grid grid-cols-1 sm:grid-cols-2 items-center'>
+              <div className='py-4 grid grid-cols-2 items-center'>
                 <div className='text-left'>
-                  <img className='h-6' alt='Company Logo' src={logo} />
+                  <img className='h-5 sm:h-6' alt='Company Logo' src={logo} />
                 </div>
                 <div className='text-right'>
-                  <h3 className='font-semibold text-3xl text-blue'>Invoice</h3>
+                  <h3 className='font-semibold text-2xl sm:text-3xl text-blue'>Invoice</h3>
                 </div>
               </div>
               <hr />
               <div className='py-4 grid grid-cols-1 sm:grid-cols-2'>
-                <div className='invoice-head-middle-left text-start'>
+                <div className='invoice-head-middle-left text-left'>
                   <p><span className='font-bold'>Date: </span>05/12/2020</p>
                 </div>
-                <div className='invoice-head-middle-right text-right'>
+                <div className='text-left sm:text-right'>
                   <p><span className='font-bold'>Invoice No: </span>INV/200802/XYZ200167/00984</p>
                 </div>
               </div>
               <hr />
               <div className='py-4 grid grid-cols-1 sm:grid-cols-2'>
-                <div className='invoice-head-bottom-left'>
+                <div>
                   <ul className='space-y-0.5'>
                     <li className='font-bold'>Invoiced To:</li>
                     <li>Smith Rhodes</li>
@@ -43,8 +44,8 @@ function App() {
                     <li>United Kingdom</li>
                   </ul>
                 </div>
-                <div className='invoice-head-bottom-right'>
-                  <ul className='space-y-0.5 text-right'>
+                <div className='my-3 sm:my-0'>
+                  <ul className='space-y-0.5 text-left sm:text-right'>
                     <li className='font-bold'>Pay To:</li>
                     <li>Koice Inc.</li>
                     <li>2705 N. Enterprise</li>
@@ -54,7 +55,7 @@ function App() {
                 </div>
               </div>
             </div>
-            <div className='overflow-x-scroll'>
+            <div className='print:overflow-x-hidden overflow-x-scroll'>
               <div className='border rounded overflow-hidden min-w-[600px]'>
                 <table className='border-collapse rounded w-full'>
                   <thead className='bg-black-2-opacity'>
@@ -165,13 +166,13 @@ function App() {
                 <span className='font-bold text-center'>NOTE:&nbsp;</span>This is computer generated receipt and does not require physical signature.
               </p>
               <div className='mt-5 flex gap-4 justify-center'>
-                <button type='button' className='px-3.5 py-1.5 text-dark border flex gap-1.5 items-center' onClick={handlePrint}>
+                <button type='button' className='px-3.5 py-1.5 text-dark border flex gap-1.5 items-center print:hidden' onClick={handlePrint}>
                   <span>
                     <BsFillPrinterFill />
                   </span>
                   <span>Print</span>
                 </button>
-                <button type='button' className='px-3.5 py-1.5 text-dark border flex gap-1.5 items-center'>
+                <button type='button' className='px-3.5 py-1.5 text-dark border flex gap-1.5 items-center print:hidden'>
                   <span>
                     <BsDownload />
                   </span>
@@ -185,5 +186,3 @@ function App() {
     </Fragment>
   );
 };
-
-export default App;
