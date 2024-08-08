@@ -13,8 +13,8 @@ module.exports = {
     },
     extend: {
       colors: {
-        dark: "#535b61",
-        blue: "#0c2f54",
+        dark: "#333333",
+        blue: "#0C2F54",
         'black-2-opacity': "rgba(0, 0, 0, 0.02)",
         'black-1-opacity': "rgba(0, 0, 0, 0.1)"
       },

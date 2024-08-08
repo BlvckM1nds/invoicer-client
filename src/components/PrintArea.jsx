@@ -84,7 +84,7 @@ const data = [
     "quantity": 25
   },
   {
-    "name": "Colgate Total Whitening Toothpaste - 120g",
+    "name": "Colgate Total Whitening Toothpaste - 120g | Colgate Total Whitening Toothpaste - 120g Colgate Total Whitening Toothpaste - 120g Colgate Total Whitening Toothpaste - 120g",
     "price": 25000,
     "quantity": 30
   },
@@ -195,16 +195,16 @@ const PrintArea = () => {
             <div className='overflow-hidden min-w-[600px]'>
               <table className='border-collapse rounded w-full'>
                 <thead>
-                  <tr className='border-b border-black-1-opacity'>
-                    <th className='p-3 font-bold'>Product</th>
-                    <th className='p-3 font-bold'>Price</th>
-                    <th className='p-3 font-bold'>QTY</th>
-                    <th className='p-3 font-bold'>Amount</th>
+                  <tr className='border-b border-black-1-opacity text-sm'>
+                    <th className='p-3 w-[450px] font-bold'>Product</th>
+                    <th className='p-3 w-[160px] font-bold'>Price</th>
+                    <th className='p-3 w-[80px] font-bold'>QTY</th>
+                    <th className='p-3 w-[160px] font-bold'>Amount</th>
                   </tr>
                 </thead>
                 <tbody>
-                  {data.map(({ name, price, quantity }) => (
-                    <tr className='border-b border-black-1-opacity'>
+                  {data.map(({ name, price, quantity }, index) => (
+                    <tr key={index} className='border-b border-black-1-opacity'>
                       <td className='p-3'>{name}</td>
                       <td className='p-3 text-center'>
                         {new Intl.NumberFormat('id-ID', {
@@ -262,13 +262,13 @@ const PrintArea = () => {
 
           {/* Invoice Notes & Method */}
           <div className='mt-24 px-3 text-center'>
-            <div className='flex text-xs items-end'>
+            <div className='flex flex-col sm:flex-row text-xs items-start sm:items-end space-y-5 sm:space-y-0'>
               <p className='flex-1 text-left'>
                 <span className='font-bold text-center'>NOTE:&nbsp;</span>This is computer generated receipt and does not require physical signature.
               </p>
               <em className='flex-1 text-right'>Last updated: {formatLongDate('id-ID', new Date())}</em>
             </div>
-            <div className='mt-8 text-sm flex gap-3 justify-end print:hidden'>
+            <div className='mt-8 text-sm flex gap-3 justify-center sm:justify-end print:hidden'>
               <button
                 type='button'
                 className='px-3.5 py-1.5 text-dark border flex gap-1.5 items-center'
